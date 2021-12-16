@@ -1,0 +1,47 @@
+.welcomeCard {
+    background-color: #e1e1f9;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.header {
+    text-align: center;
+    font-size: 2em;
+}
+
+.mb-2 {
+    text-align: center;
+    font-size: 1.3em;
+}
+
+.welcomeImage {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    border-radius: 80px;
+    border-color: white;
+}
+
+.subText {
+    text-align: center;
+}
+
+.centerButton {
+    text-align: center;
+}
+
+.viewGardenButton {
+    border-radius: 50px;
+    transition-duration: 0.5s;
+    background-color: #228B22;
+    color: black;
+    font-size: 1.25em;
+    /* display: none; */
+}
+
+.viewGardenButton:hover {
+    background-color: #e7e3c5;
+    color: black;
+    box-shadow: 0 12px 6px 0 rgba(0,0,0,0.5);
+}
