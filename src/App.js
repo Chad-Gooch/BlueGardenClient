@@ -39,6 +39,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<Sitenav updateToken={updateToken} sessionToken={sessionToken} clearToken={clearToken}/>}>
+          <Route path='/' element={<Welcome />} />
           <Route path='/Welcome' element={<Welcome />} />
           <Route path='/GardenIndex' element={<GardenIndex token={sessionToken}/>} />
           <Route path='/SearchPlant' element={<SearchPlant token={sessionToken}/>} />
