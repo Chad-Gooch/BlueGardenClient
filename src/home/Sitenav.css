@@ -1,0 +1,35 @@
+li.nav-item {
+    margin: auto;
+}
+
+.navbar {
+    background-color: #8787d5;
+}
+
+.brand {
+    font-weight: 900;
+    font-size: xx-large;
+    color: white;
+}
+
+.navitem {
+    font-size: large;
+    font-weight: 500;
+    color: white;
+    margin-left: 25px;
+    margin-right: 25px;
+    text-decoration: none;
+}
+
+.signinbutton {
+    font-size: large;
+    font-weight: 500;
+    color: white;
+    margin-left: 25px;
+    margin-right: 25px;
+    background-color: #228b22;
+}
+
+.signinbutton:hover {
+    background-color: #105f10;
+  }
