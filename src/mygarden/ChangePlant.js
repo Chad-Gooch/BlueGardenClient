@@ -1,33 +1,57 @@
-import React, {useState, useEffect} from 'react';
-import {Button} from 'reactstrap';
+import React, {useState} from 'react';
+import {Button, Input} from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './ChangePlant.css';
 
-const ChangePlant = props => {
-    const [editPlantName, setEditPlantName] = useState(props);
-    const [editSpecies, setEditSpecies] = useState(props);
-    const [editSeason, setEditSeason] = useState(props);
 
-    const changePlantUpdate = (event, plant) => {
-        event.preventDefault();
-        fetch(`http://localhost:5000/change?da0f2925-5448-4c78-baad-6267ed4697d6`, {
+const ChangePlant = props => {
+    const [berryNumber, setBerryNumber] = useState();
+
+    const berryUpdateSubmit = (berrySubmit) => {
+
+        let arrayId = berrySubmit - 1;
+        let plant = props.berryHolder[arrayId];
+        let plantName = plant.name;
+        let species = plant.natural_gift_type.name;
+        let plantImage = plant.image;
+        let season = plant.descript;
+        const idNumber = props.token;
+        console.log(plant, plantName, species, season, idNumber);
+        console.log(berrySubmit);
+        fetch(`http://localhost:5000/change/da0f2925-5448-4c78-baad-6267ed4697d6`, {
             method: "PUT",
             body: JSON.stringify({
-                plant: { plantName: editPlantName, species: editSpecies, season: editSeason },
+                garden:{
+                    plantName:plantName,
+                    species:species,
+                    plantImage:plantImage,
+                    season:season
+                }
             }),
-            headers: new Headers({
-                "Content-Type": "application/json",
-                Authorization: props.token,
-            }),
-        }).then((plant) => {
-            props.fetchPlantUpdate();
-        });
-    };
+            headers: new Headers ({
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + idNumber,
+            })
+        }).then(
+            (response) => response.json()
+        ).then(
+            (data) => console.log(data)
+        )
+    }
 
     return (
-        <Button className="updateToGarden" onClick={() => berryUpdate(props.berryToUpdate)}>
-            Update Plant
-        </Button>
+    
+        <div className="updatedForm">
+            <form>
+                <label>
+                    Enter a number:
+                    <Input type='number' onChange={(e) => setBerryNumber(e.target.value)} value={berryNumber} />
+                </label>
+            </form>
+            <Button className="updateToGarden" onClick={() => berryUpdateSubmit(berryNumber)}>
+                Update Plant
+            </Button>
+        </div>
     )
 }
 

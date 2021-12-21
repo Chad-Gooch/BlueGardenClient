@@ -16,7 +16,8 @@ const AddPlant = props => {
         const idNumber = props.token;
         console.log(detail, plant);
         console.log(plantName, species, plantImage, season, idNumber);
-        // fetch method
+
+        
         fetch('http://localhost:5000/add/', {
             method: 'POST',
             body: JSON.stringify({
