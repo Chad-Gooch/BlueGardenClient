@@ -35,7 +35,7 @@ function App() {
 
 
   return (
-  <div>
+  <div style={{background:"#e1e1f9"}}>
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<Sitenav updateToken={updateToken} sessionToken={sessionToken} clearToken={clearToken}/>}>

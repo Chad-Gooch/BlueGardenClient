@@ -30,6 +30,7 @@ const ViewGarden = props => {
     }
 
     return (
+
         <div>
             <Row>
             {myPlants.map(result => {
@@ -49,6 +50,7 @@ const ViewGarden = props => {
                 )}
             </Row>  
         </div>
+
         
     );
 }

@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 import {Button, Card, Row, Col} from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './SearchResult.css';
+import AddPlant from '../mygarden/AddPlant';
+import ChangePlant from '../mygarden/ChangePlant';
 
 const SearchResult = props => {
 
@@ -23,18 +25,21 @@ const SearchResult = props => {
     
     return (
         <div>
-            <Button  onClick={()=>combine()}>Show all</Button>
+            <Button onClick={()=>combine()}>Show all</Button>
             <br />
             <Row>
             {plant.map(result => {
                 return ( 
                     <Col>
-                    <Card className="card" key={result.id}>
-                        <img src={result.image} />
+                    <Card style={{width:"160px"}} key={result.id}>
+
+                        <img src={result.image} alt="Berry Sprite" />
+
                         <div>
                             <h2>{result.name}</h2>
                             <p>{result.descript}</p>
-                            <p>{result.growth_time}</p>
+                            <AddPlant berryHolder = {props.berryHolder} item = {props.item} berryToAdd = {result.id} />
+                            <ChangePlant berryHolder = {props.berryHolder} item = {props.item} token={props.token} />
                         </div>
                     </Card>
                     </Col>
