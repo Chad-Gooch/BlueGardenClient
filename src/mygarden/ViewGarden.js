@@ -15,7 +15,6 @@ const ViewGarden = props => {
     return (
         <Table>
             ViewGarden{settingOne}
-            <AddPlant />
             <ChangePlant />    
         </Table>
         

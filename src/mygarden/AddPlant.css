@@ -1,0 +1,12 @@
+.addToGarden {
+    border-radius: 4px;
+    transition-duration: 0.5s;
+    background-color: #228B22;
+    color: black;
+}
+
+.addToGarden:hover {
+    background-color: #e7e3c5;
+    color: black;
+    box-shadow: 0 12px 6px 0 rgba(0,0,0,0.5);
+}
