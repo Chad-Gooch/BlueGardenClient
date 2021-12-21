@@ -12,10 +12,9 @@ const GardenIndex = props => {
     },[])
 
     return (
-        <Table>
-            GardenIndex{settingOne}
-            <ViewGarden />
-        </Table>
+        <div>
+           <ViewGarden token={props.token}/>
+        </div>
     );
 }
 
