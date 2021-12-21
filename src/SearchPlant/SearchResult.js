@@ -29,7 +29,7 @@ const SearchResult = props => {
             {plant.map(result => {
                 return ( 
                     <Col>
-                    <Card className="card" key={result.id}>
+                    <Card style={{width:"160px"}} key={result.id}>
                         <img src={result.image} />
                         <div>
                             <h2>{result.name}</h2>

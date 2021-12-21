@@ -13,7 +13,7 @@ const SignIn = props => {
     },[]);
 
     return (
-        <div>            
+        <div className="loginScreen">            
             {settingOne ? <Login updateToken={props.updateToken} setSettingOne={setSettingOne} current={settingOne}/> : <CreateLogin updateToken={props.updateToken} setSettingOne={setSettingOne} current={settingOne}/>}
         </div>
     );
