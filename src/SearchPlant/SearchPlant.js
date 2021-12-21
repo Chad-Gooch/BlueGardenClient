@@ -21,7 +21,7 @@ const SearchPlant = props => {
     };
 
     useEffect(()=>{
-        for(let i = 1; i < 50; i++){
+        for(let i = 1; i < 61; i++){
             fetchBerries(i);
         };
     },[]);

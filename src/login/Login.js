@@ -1,42 +1,56 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import {Form, FormGroup, Label, Input, Button} from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Login.css';
 
 const Login = props => {
-    const [username, setUsername] = useState('')
+    const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
-    let handleSubmit = event => {
+    let handleSubmit = event => {       
         event.preventDefault();
         fetch('http://localhost:5000/login/', {
            method: 'POST',
-           body: JSON.stringify({user:{email:username, password:password}}),
+           body: JSON.stringify({user:{email:email, password:password}}),
            headers: new Headers ({
                'Content-Type':'application/json'
            })
         }).then(
            (response) => response.json()
         ) .then((data) => {
-           props.updateToken(data.sessionToken);
-           console.log(data.sessionToken)
+            if (typeof(data.sessionToken) !== 'string') {
+                alert(`Invalid username or password`)
+            } else {
+                props.updateToken(data.sessionToken);
+                window.location.href='/GardenIndex';
+            }
         })
     }
 
     return(
-        <div>
-            <Button  onClick={()=>props.setSettingOne(!props.current)}>Create an account</Button>
+        <div id='logIn'>
+            <h2>Log In</h2>
+            <br />
+            <br />
+            <br />
             <Form onSubmit={handleSubmit}>
                 <FormGroup>
-                    <Label htmlFor='username'>Username</Label>
-                    <Input onChange={(e) => setUsername(e.target.value)} name='username' value={username} />
+                    <Label htmlFor='email'>Email Address:</Label>
+                    <Input onChange={(e) => setEmail(e.target.value)} type='email' name='email' value={email} required/>
                 </FormGroup>
                 <FormGroup>
-                <Label htmlFor='password'>Password</Label>
-                    <Input onChange={(e) => setPassword(e.target.value)} name='password' value={password} />
+                <Label htmlFor='password'>Password:</Label>
+                    <Input onChange={(e) => setPassword(e.target.value)} type='password' name='password' value={password} required/>
                 </FormGroup>
                 <Button type='submit'>Login</Button>
             </Form>
+            <br />
+            <br />
+            <br />
+            <div className='loginSwitch'>
+                <h3>Don't have an account?</h3>
+                <Button  onClick={()=>props.setSettingOne(!props.current)}>Create an account here!</Button>
+            </div>
         </div>
     )
 }

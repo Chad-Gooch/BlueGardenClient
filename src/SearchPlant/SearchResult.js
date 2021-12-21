@@ -32,7 +32,9 @@ const SearchResult = props => {
                 return ( 
                     <Col>
                     <Card style={{width:"160px"}} key={result.id}>
+
                         <img src={result.image} alt="Berry Sprite" />
+
                         <div>
                             <h2>{result.name}</h2>
                             <p>{result.descript}</p>
