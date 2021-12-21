@@ -14,7 +14,7 @@ const SignIn = props => {
 
     return (
         <div className="loginScreen">            
-            {settingOne ? <Login updateToken={props.updateToken} setSettingOne={setSettingOne} current={settingOne}/> : <CreateLogin updateToken={props.updateToken} setSettingOne={setSettingOne} current={settingOne}/>}
+            {settingOne ? <Login updateToken={props.updateToken} setSettingOne={setSettingOne} current={settingOne} changeCount={props.changeCount} setChangeCount={props.setChangeCount}/> : <CreateLogin updateToken={props.updateToken} setSettingOne={setSettingOne} current={settingOne} changeCount={props.changeCount} setChangeCount={props.setChangeCount} />}
         </div>
     );
 }

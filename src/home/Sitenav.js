@@ -1,18 +1,11 @@
 import React, {useState, useEffect} from 'react';
 import {Outlet, Link} from "react-router-dom";
-import {Container, Col, Row, Button} from 'reactstrap';
+import {Button} from 'reactstrap';
 import {
-    Collapse,
     Navbar,
-    NavbarToggler,
     NavbarBrand,
     Nav,
-    NavItem,
-    NavLink,
-    UncontrolledDropdown,
-    DropdownToggle,
-    DropdownMenu,
-    DropdownItem } from 'reactstrap';
+    NavItem} from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Sitenav.css';
 

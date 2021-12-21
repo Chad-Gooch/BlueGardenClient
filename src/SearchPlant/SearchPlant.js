@@ -1,35 +1,19 @@
 import React, {useEffect} from 'react';
-//import {Table} from 'reactstrap';
+import {Button} from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './SearchPlant.css';
 import SearchResult from './SearchResult';
 
 const SearchPlant = props => {
 
-    let berryHolder = [];
-    let item = [];
-
-    async function fetchBerries(i) {
-        const response = await fetch(`https://pokeapi.co/api/v2/berry/${i}`)
-        .then((response) => response.json()) 
-        .then((data) => {
-            fetch(data.item.url)
-            .then((res) => res.json())
-            .then((itemItem)=> item.push(itemItem))
-            berryHolder.push(data)}
-        );
-    };
-
     useEffect(()=>{
-        for(let i = 1; i < 61; i++){
-            fetchBerries(i);
-        };
+        props.combine();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     },[]);
 
     return (
         <div>
-            <p>test title</p>
-            <SearchResult berryHolder={berryHolder} item={item} token={props.token}/>
+            {(props.berryHolder.length === 0) ? <Button onClick={() => props.combine()}>Show Berries</Button> : <SearchResult berryHolder={props.berryHolder} token={props.token} />}
         </div>
     );
 }

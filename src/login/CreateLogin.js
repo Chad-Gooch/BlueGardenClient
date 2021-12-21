@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import {Form, FormGroup, Label, Input, Button} from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './CreateLogin.css';
@@ -18,12 +18,12 @@ const CreateLogin = props => {
                 })
             }).then(
                 (response) => response.json()
-                ) .then((data) => {
+                ).then((data) => {
                     if (typeof(data.sessionToken) !== 'string') {
                         alert('Email already registered.')
                     } else {
                         props.updateToken(data.sessionToken);
-                        window.location.href='/SearchPlant'
+                        window.location.href='/'
                     }
             })
         } else {

@@ -4,12 +4,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './Login.css';
 
 const Login = props => {
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
 
     let handleSubmit = event => {       
         event.preventDefault();
-        fetch('http://localhost:5000/login/', {
+        fetch('http://localhost:5000/login/',{
            method: 'POST',
            body: JSON.stringify({user:{email:email, password:password}}),
            headers: new Headers ({
@@ -17,12 +17,12 @@ const Login = props => {
            })
         }).then(
            (response) => response.json()
-        ) .then((data) => {
+        ).then((data) => {
             if (typeof(data.sessionToken) !== 'string') {
                 alert(`Invalid username or password`)
             } else {
                 props.updateToken(data.sessionToken);
-                window.location.href='/GardenIndex';
+                window.location.href='/';
             }
         })
     }

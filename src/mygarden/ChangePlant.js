@@ -15,10 +15,10 @@ const ChangePlant = props => {
         let species = plant.natural_gift_type.name;
         let plantImage = plant.image;
         let season = plant.descript;
-        const idNumber = props.token;
-        console.log(plant, plantName, species, season, idNumber);
+        console.log(plant, plantName, species, season, props.token, props.item);
         console.log(berrySubmit);
-        fetch(`http://localhost:5000/change/da0f2925-5448-4c78-baad-6267ed4697d6`, {
+
+        fetch(`http://localhost:5000/change/${props.item}`, {
             method: "PUT",
             body: JSON.stringify({
                 garden:{
@@ -30,13 +30,11 @@ const ChangePlant = props => {
             }),
             headers: new Headers ({
                 'Content-Type': 'application/json',
-                'Authorization': 'Bearer ' + idNumber,
+                'Authorization': 'Bearer ' + props.token,
             })
         }).then(
             (response) => response.json()
-        ).then(
-            (data) => console.log(data)
-        )
+        ).then(() => props.getPlants())
     }
 
     return (

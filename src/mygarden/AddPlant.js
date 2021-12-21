@@ -7,15 +7,13 @@ const AddPlant = props => {
     
     let berryAdd = (id) => {
         let arrayId = id - 1;
-        let detail = props.item[arrayId];
         let plant = props.berryHolder[arrayId];
         let plantName = plant.name;
         let species = plant.natural_gift_type.name;
         let plantImage = plant.image;
         let season = plant.descript;
-        const idNumber = props.token;
-        console.log(detail, plant);
-        console.log(plantName, species, plantImage, season, idNumber);
+        console.log(plant);
+        console.log(plantName, species, plantImage, season, props.token);
 
         
         fetch('http://localhost:5000/add/', {
@@ -29,13 +27,9 @@ const AddPlant = props => {
             }}),
             headers: new Headers ({
                 'Content-Type': 'application/json',
-                'Authorization': 'Bearer ' + idNumber,
+                'Authorization': 'Bearer ' + props.token,
             })
-        }).then(
-            (response) => response.json()
-        ).then((data) => {
-            alert("Berry Added");
-        })
+        }).then((response) => response.json())
     }
 
 
