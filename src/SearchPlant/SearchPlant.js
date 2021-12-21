@@ -29,7 +29,7 @@ const SearchPlant = props => {
     return (
         <div>
             <p>test title</p>
-            <SearchResult berryHolder ={berryHolder} item={item}/>
+            <SearchResult berryHolder={berryHolder} item={item} token={props.token}/>
         </div>
     );
 }
