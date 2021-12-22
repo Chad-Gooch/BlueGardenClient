@@ -9,19 +9,19 @@ const SearchResult = props => {
     useEffect(()=>{},[props.berryHolder])
  
     return (
-        <div>
+        <div className="searchBoard">
             <br />
             <Row>
             {props.berryHolder.map(result => {
                 return ( 
                     <Col>
-                    <Card style={{width:"160px"}} key={result.id}>
+                    <Card className="searchCards" style={{width:"160px"}} key={result.id}>
 
                         <img src={result.image} alt="Berry Sprite" />
 
                         <div>
-                            <h2>{result.name}</h2>
-                            <p>{result.descript}</p>
+                            <h2 className="plantNameSearch">{result.name}</h2>
+                            <p className="plantNameDescript">{result.descript}</p>
                             <AddPlant berryHolder = {props.berryHolder} token={props.token} berryToAdd = {result.id} />
                         </div>
                     </Card>
