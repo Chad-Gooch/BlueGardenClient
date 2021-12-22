@@ -2,13 +2,14 @@ import React from 'react';
 import {Button} from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './DeletePlant.css';
+import APIURL from '../helpers/environment';
 
 const DeletePlant = props => {
     
     
     let berryDelete = (id) => {
 
-        fetch(`http://localhost:5000/remove/${id}`, {
+        fetch(`${APIURL}/remove/${id}`, {
             method: 'DELETE',
             headers: new Headers ({
                 'Content-Type': 'application/json',

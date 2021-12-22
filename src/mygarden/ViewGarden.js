@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './ViewGarden.css';
 import DeletePlant from './DeletePlant';
 import ChangePlant from './ChangePlant';
+import APIURL from '../helpers/environment';
 
 
 const ViewGarden = props => {
@@ -17,7 +18,7 @@ const ViewGarden = props => {
 
     const getPlants = () => {
         if (props.token !== '') {
-            fetch(`http://localhost:5000/my`, {
+            fetch(`${APIURL}/my`, {
                 method: 'GET',
                 headers: new Headers({
                     'Content-Type':'application/JSON',

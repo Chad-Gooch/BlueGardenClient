@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {Button, Input} from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './ChangePlant.css';
+import APIURL from '../helpers/environment';
 
 
 const ChangePlant = props => {
@@ -18,7 +19,7 @@ const ChangePlant = props => {
         console.log(plant, plantName, species, season, props.token, props.item);
         console.log(berrySubmit);
 
-        fetch(`http://localhost:5000/change/${props.item}`, {
+        fetch(`${APIURL}/change/${props.item}`, {
             method: "PUT",
             body: JSON.stringify({
                 garden:{
