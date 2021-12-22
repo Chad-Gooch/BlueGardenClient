@@ -11,7 +11,7 @@ const Welcome = props => {
             <Card className="welcomeCard">
                 <CardBody>
                     <CardTitle className="header">
-                        Welcome to your own Garden!
+                        Welcome to your Garden!
                     </CardTitle>
                     <CardSubtitle
                     className="mb-2 text-muted">
@@ -24,13 +24,8 @@ const Welcome = props => {
                     />
                 <CardBody>
                     <CardText className="subText">
-                        Find all the berries you could ask for. Create a garden using the berries you search for, and grow!
+                        Berries are small fruits that are produced naturally. Create a garden using the search tool above, and grow!
                     </CardText>
-                     <div className="centerButton">
-                        <button className="viewGardenButton" href="#">
-                             View My Garden
-                        </button>
-                    </div>
                 </CardBody>
             </Card>
         </div>

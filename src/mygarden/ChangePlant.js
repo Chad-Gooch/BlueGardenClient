@@ -42,8 +42,8 @@ const ChangePlant = props => {
         <div className="updatedForm">
             <form>
                 <label>
-                    Enter a number:
-                    <Input type='number' onChange={(e) => setBerryNumber(e.target.value)} value={berryNumber} />
+                    Change Plant ID:
+                    <Input className='inputBox' type='number' onChange={(e) => setBerryNumber(e.target.value)} value={berryNumber} />
                 </label>
             </form>
             <Button className="updateToGarden" onClick={() => berryUpdateSubmit(berryNumber)}>

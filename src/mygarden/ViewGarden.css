@@ -1,0 +1,24 @@
+.board {
+    margin: 0px 40px 20px 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.berryCard {
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 220px;
+    min-width: 200px;
+    box-shadow: 3px 3px 5px grey
+}
+
+.plantName {
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.element {
+    text-transform: capitalize;
+    text-align: center;
+}

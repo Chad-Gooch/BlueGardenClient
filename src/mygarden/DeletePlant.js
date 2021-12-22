@@ -1,3 +1,4 @@
+
 import React from 'react';
 import {Button} from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -25,7 +26,7 @@ const DeletePlant = props => {
 
     return (
         <Button className="deleteFromGarden" onClick={() => berryDelete(props.berryToDelete)}>
-            Delete from My Garden
+            Delete Plant
         </Button>
     )
 }
