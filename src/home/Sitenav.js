@@ -30,7 +30,7 @@ const Sitenav = props => {
                     <NavItem><Link className='navitem' to='/Welcome'>Home</Link></NavItem>
                     <NavItem><Link className='navitem' to='/GardenIndex'>My Garden</Link></NavItem>
                     <NavItem><Link className='navitem' to='/SearchPlant'>Search</Link></NavItem>
-                    <NavItem >{(settingOne)?<Button className='signinbutton' href='/SignIn'>Sign In</Button>:<Button onClick={props.clearToken}>Logout</Button>}</NavItem>
+                    <NavItem >{(settingOne)?<Button className='signinbutton' href='/SignIn'>Sign In</Button>:<Button className='logoutButton' onClick={props.clearToken}>Logout</Button>}</NavItem>
                 </Nav>
             </Navbar>
 

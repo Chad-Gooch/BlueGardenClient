@@ -19,4 +19,5 @@
 .inputBox {
     height: 25px;
     margin-top: 5px;
+    border-color: rgb(89, 88, 88);
 }
