@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {Form, FormGroup, Label, Input, Button} from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './CreateLogin.css';
+import APIURL from '../helpers/environment';
 
 const CreateLogin = props => {
     const [email, setEmail] = useState('')
@@ -10,7 +11,7 @@ const CreateLogin = props => {
     let handleSubmit = event => {
         event.preventDefault();
         if (password.length >= 5) {
-            fetch('http://localhost:5000/createlogin/', {
+            fetch(`${APIURL}/createlogin/`, {
                 method: 'POST',
                 body: JSON.stringify({user:{email:email, password:password}}),
                 headers: new Headers ({

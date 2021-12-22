@@ -2,6 +2,7 @@ import React from 'react';
 import {Button} from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './AddPlant.css';
+import APIURL from '../helpers/environment';
 
 const AddPlant = props => {
     
@@ -16,7 +17,7 @@ const AddPlant = props => {
         console.log(plantName, species, plantImage, season, props.token);
 
         
-        fetch('http://localhost:5000/add/', {
+        fetch(`${APIURL}/add/`, {
             method: 'POST',
             body: JSON.stringify({
                 garden:{
