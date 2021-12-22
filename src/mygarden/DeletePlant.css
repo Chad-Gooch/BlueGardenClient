@@ -1,0 +1,15 @@
+.deleteFromGarden {
+    background-color: red;
+    transition-duration: 0.2s;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    padding: 3px 15px 3px 15px ;
+}
+
+.deleteFromGarden:hover {
+    background-color: rgb(255, 75, 75);
+    color: white;
+    box-shadow: 0 6px 6px 0 rgba(0,0,0,0.5);
+}

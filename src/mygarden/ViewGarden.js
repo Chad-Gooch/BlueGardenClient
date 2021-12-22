@@ -31,19 +31,19 @@ const ViewGarden = props => {
     
     return (
 
-        <div>
+        <div className='board'>
             <Row>
             {myPlants.map(result => {
                 return ( 
                     <Col>
-                    <Card key={result.idNumber}>
-                        <img src={result.plantImage} alt={result.plantName}/>
+                    <Card className='berryCard' key={result.idNumber}>
+                        <img className='berryImg' src={result.plantImage} alt={result.plantName}/>
                         <div>
-                            <h2>{result.plantName}</h2>
+                            <h2 className='plantName'>{result.plantName}</h2>
+                            <p className='element'>{result.species}</p>
                             <p>{result.season}</p>
-                            <p>{result.species}</p>
                             <ChangePlant berryHolder = {props.berryHolder} getPlants = {getPlants} item = {result.idNumber} token={props.token} />
-                            <DeletePlant berryToDelete = {result.idNumber} getPlants = {getPlants} token = {props.token} />
+                            <DeletePlant className='deleteButton' berryToDelete = {result.idNumber} getPlants = {getPlants} token = {props.token} />
                         </div>
                     </Card>
                     </Col>

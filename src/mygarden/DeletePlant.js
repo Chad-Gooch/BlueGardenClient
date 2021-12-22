@@ -25,7 +25,7 @@ const DeletePlant = props => {
 
     return (
         <Button className="deleteFromGarden" onClick={() => berryDelete(props.berryToDelete)}>
-            Delete from My Garden
+            Delete Plant
         </Button>
     )
 }

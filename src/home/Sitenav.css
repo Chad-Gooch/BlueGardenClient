@@ -33,3 +33,16 @@ li.nav-item {
 .signinbutton:hover {
     background-color: #105f10;
   }
+
+.logoutButton {
+    font-size: large;
+    font-weight: 500;
+    color: white;
+    margin-left: 25px;
+    margin-right: 25px;
+    background-color: #228b22;
+}
+
+.logoutButton:hover {
+    background-color: #105f10;
+  }
